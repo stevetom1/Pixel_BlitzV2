@@ -24,7 +24,6 @@ public class HUD : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         Ability1();
@@ -34,6 +33,12 @@ public class HUD : MonoBehaviour
     void Ability1()
     {
         abilityImage1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
+
+        if (Input.GetKey(ability1)&& isCooldown == false)
+        {
+            isCooldown= true;
+            abilityImage1.fillAmount = 1;
+        }
 
         if(abilityImage1.fillAmount <= 0)
         {
@@ -45,6 +50,12 @@ public class HUD : MonoBehaviour
     void Ability2()
     {
         abilityImage2.fillAmount -= 1 / cooldown2 * Time.deltaTime;
+
+        if (Input.GetKey(ability2) && isCooldown2 == false)
+        {
+            isCooldown2 = true;
+            abilityImage2.fillAmount = 1;
+        }
 
         if (abilityImage2.fillAmount <= 0)
         {
