@@ -65,9 +65,9 @@ public class GameManager : MonoBehaviour
 
     void UpdateUI()
     {
-        //hpText.text = "HP: " + playerLives.GetHP() + "/" + playerLives.maxHp;
-        //xpText.text = "XP: " + playerLives.exp;
-        //levelText.text = "Level: " + playerLives.level;
+       // hpText.text = "HP: " + playerLives.GetHP() + "/" + playerLives.maxHp;
+       // xpText.text = "XP: " + playerLives.exp;
+       // levelText.text = "Level: " + playerLives.level;
     }
 
     void GameOver()
@@ -77,24 +77,24 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void ActivateDash()
+    public void ActivateDash(Rigidbody2D rb)
     {
         if (canDash)
         {
-            StartCoroutine(Dash());
+            StartCoroutine(Dash(rb));
         }
     }
 
-    public void ActivateTeleport(Vector3 targetPosition)
+    public void ActivateTeleport(Rigidbody2D rb, Vector3 targetPosition)
     {
         if (canTeleport)
         {
-            TeleportToPosition(targetPosition);
+            TeleportToPosition(rb, targetPosition);
             StartCoroutine(TeleportCooldown());
         }
     }
 
-    private IEnumerator Dash()
+    private IEnumerator Dash(Rigidbody2D rb)
     {
         canDash = false;
         playerCollider.enabled = false;
@@ -105,21 +105,22 @@ public class GameManager : MonoBehaviour
         float elapsedTime = 0f;
         while (elapsedTime < dashDuration)
         {
-            player.transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / dashDuration);
-            elapsedTime += Time.deltaTime;
+            rb.MovePosition(Vector3.Lerp(startPosition, endPosition, elapsedTime / dashDuration));
+            elapsedTime += Time.fixedDeltaTime;
             yield return null;
         }
 
-        player.transform.position = endPosition;
+        rb.MovePosition(endPosition);
 
         playerCollider.enabled = true;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+        Debug.Log("dash");
     }
 
-    private void TeleportToPosition(Vector3 targetPosition)
+    private void TeleportToPosition(Rigidbody2D rb, Vector3 targetPosition)
     {
-        player.transform.position = targetPosition;
+        rb.MovePosition(targetPosition);
         Debug.Log("Teleported to: " + targetPosition);
     }
 
