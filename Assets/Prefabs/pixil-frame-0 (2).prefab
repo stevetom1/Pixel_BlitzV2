@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7074899729565346371}
   - component: {fileID: 464738350903289714}
   - component: {fileID: -996763714267823833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pixil-frame-0 (2)
-  m_TagString: Untagged
+  m_TagString: playerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
