@@ -7497,6 +7497,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1341637066044515675, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 6643236067538392535}
     - target: {fileID: 3459658385730655854, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
       propertyPath: cam
       value: 
@@ -7559,3 +7563,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+--- !u!50 &6643236067538392535 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3266608090577721152, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+  m_PrefabInstance: {fileID: 6643236067538392534}
+  m_PrefabAsset: {fileID: 0}
