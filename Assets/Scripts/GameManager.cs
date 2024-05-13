@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateUI()
     {
-       // hpText.text = "HP: " + playerLives.GetHP() + "/" + playerLives.maxHp;
+        playerLives.UpdateHud();
        // xpText.text = "XP: " + playerLives.exp;
        // levelText.text = "Level: " + playerLives.level;
     }

@@ -9,6 +9,7 @@ public class PlayerLives : MonoBehaviour
     int hp;
     float bulletTimer;
 
+    public GameObject[] hearts;
 
     public TextMeshProUGUI hpText;
 
@@ -23,6 +24,7 @@ public class PlayerLives : MonoBehaviour
     void Update()
     {
         hpText.text = "HP: " + hp + "/" + maxHp;
+        //UpdateHud();
         //xpText.text = "XP: " + exp;
         //levelText.text = "Level: " + level;
     }
@@ -51,7 +53,21 @@ public class PlayerLives : MonoBehaviour
         return hp;
     }
 
-
+    public void UpdateHud()
+    {
+        if (hp < 1)
+        {
+            Destroy(hearts[0].gameObject);
+        }
+        else if(hp < 2)
+        {
+            Destroy(hearts[1].gameObject);
+        }
+        else if(hp < 3)
+        {
+            Destroy(hearts[2].gameObject);
+        }
+    }
 
 
 
