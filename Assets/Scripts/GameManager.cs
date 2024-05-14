@@ -51,7 +51,8 @@ public class GameManager : MonoBehaviour
     public void PlayerTakeDamage(int damage)
     {
         playerLives.TakeDamage(damage);
-        UpdateUI();
+        playerLives.UpdateHud();
+        //UpdateUI();
         if (playerLives.IsDead())
         {
             GameOver();
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour
 
     void UpdateUI()
     {
-        playerLives.UpdateHud();
+       //playerLives.UpdateHud();
        // xpText.text = "XP: " + playerLives.exp;
        // levelText.text = "Level: " + playerLives.level;
     }

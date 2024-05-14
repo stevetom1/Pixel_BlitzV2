@@ -7513,6 +7513,22 @@ PrefabInstance:
       propertyPath: deathScreen
       value: 
       objectReference: {fileID: 1620125927}
+    - target: {fileID: 6643236068914192708, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643236068914192708, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 315152591}
+    - target: {fileID: 6643236068914192708, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 734018172}
+    - target: {fileID: 6643236068914192708, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 1790655717}
     - target: {fileID: 6643236068914192711, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
       propertyPath: m_RootOrder
       value: 2
