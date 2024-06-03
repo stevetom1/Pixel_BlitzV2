@@ -98,7 +98,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -125,13 +125,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954391702978386020}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ab4cb6edbcc02f4a920f440526a4f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 793900332573039656, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
   speed: 3
+  distance: 0
+  lineOfSite: 5
 --- !u!50 &442083940000621143
 Rigidbody2D:
   serializedVersion: 4

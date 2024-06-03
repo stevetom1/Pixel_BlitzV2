@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 3266608090577721152}
   - component: {fileID: 7061879776649273909}
   - component: {fileID: 6643236068914192708}
+  - component: {fileID: 5676203022966006707}
   - component: {fileID: 6643236068914192709}
-  - component: {fileID: -1341637066044515675}
   m_Layer: 7
   m_Name: Player
   m_TagString: player
@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 6643236068914192730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.15, y: -7.39, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5401339951145272152}
@@ -111,15 +111,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300142, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 0, g: 0.30938816, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3459658385730655854
@@ -198,9 +198,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3f456f34d4e2649b411bc10378cb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hearts: []
   hpText: {fileID: 0}
   deathScreen: {fileID: 0}
   player: {fileID: 6643236068914192730}
+--- !u!114 &5676203022966006707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643236068914192730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6d6215c3fd29044852eb7d6686fc81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashDistance: 5
+  dashDuration: 0.5
+  dashCooldown: 2
+  invincibilityDuration: 1
+  teleportCooldown: 1
 --- !u!114 &6643236068914192709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,15 +234,3 @@ MonoBehaviour:
   requiredExp: 0
   level: 0
   exp: 0
---- !u!114 &-1341637066044515675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6643236068914192730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6d6215c3fd29044852eb7d6686fc81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

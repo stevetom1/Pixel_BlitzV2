@@ -470,6 +470,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capsule (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 954391702978386020, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 954391702978386023, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -516,7 +520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2885659463160049913, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
@@ -1670,6 +1674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capsule (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 954391702978386020, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 954391702978386023, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2430,10 +2438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab3e7bf1e81bb4a8d168a99aa07088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDistance: 5
-  dashDuration: 0.5
-  dashCooldown: 2
-  teleportCooldown: 1
   playerAddXp: {fileID: 0}
   playerLives: {fileID: 1375810706}
   hpText: {fileID: 1863466681}
@@ -6235,15 +6239,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee192f5750b0ce4badde6b26fc8992e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 954391702978386020, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
-  spawnPoints:
-  - {fileID: 1085351234}
-  - {fileID: 1577869685}
-  - {fileID: 1210483817}
-  - {fileID: 336425512}
-  maxEnemies: 2
-  totalEnemies: 3
-  canSpawn: 1
+  enemies:
+  - enemyPrefab: {fileID: 954391702978386020, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
+    cost: 1
+  - enemyPrefab: {fileID: 954391702978386020, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
+    cost: 2
+  - enemyPrefab: {fileID: 954391702978386020, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
+    cost: 3
+  enemiesToSpawn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currWave: 1
+  waveValue: 0
+  spawnlocation: {fileID: 1085351234}
+  waveDuration: 30
 --- !u!4 &1722894685
 Transform:
   m_ObjectHideFlags: 0
@@ -7576,6 +7592,26 @@ PrefabInstance:
     - target: {fileID: 6643236068914192730, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061879776649273909, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061879776649273909, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061879776649273909, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904015356921699924, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
+    - target: {fileID: 7904015356921699924, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
