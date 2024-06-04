@@ -37,6 +37,8 @@ public class PlayerLives : MonoBehaviour
         }
     }
 
+ 
+
 
     public void TakeDamage(int damage)
     {
