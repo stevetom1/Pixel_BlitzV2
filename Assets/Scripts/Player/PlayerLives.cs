@@ -30,12 +30,14 @@ public class PlayerLives : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Enemy" || collision.tag == "enemyBullet")
         {
             int damageAmount = 1;
             GameManager.instance.PlayerTakeDamage(damageAmount);
         }
     }
+
+
 
  
 

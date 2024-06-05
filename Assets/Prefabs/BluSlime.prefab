@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 357022917058672064}
   - component: {fileID: 357022917058672065}
   - component: {fileID: 357022917058672070}
+  - component: {fileID: -2732055353302607336}
+  - component: {fileID: -2464258123249635681}
   m_Layer: 0
   m_Name: BluSlime
   m_TagString: Enemy
@@ -169,3 +171,53 @@ MonoBehaviour:
   maxX2: 11
   maxY1: -9
   maxY2: 8
+--- !u!114 &-2732055353302607336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357022917058672069}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5d7293d810f13449e06f71c11efe43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1050519549686476737, guid: cc174b2ab970acd449c26565720844ea, type: 3}
+  angles:
+  - 0
+  - 45
+  - 90
+  - 135
+  - 180
+  - 225
+  - 270
+  - 315
+  bulletSpeed: 5
+  spawnRate: 0.5
+--- !u!114 &-2464258123249635681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357022917058672069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55bf50e0de4a5e40bf46576b3a5e5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0
+  lineOfSite: 10
+  bulletPrefab: {fileID: 1050519549686476737, guid: cc174b2ab970acd449c26565720844ea, type: 3}
+  angles:
+  - 0
+  - 45
+  - 90
+  - 135
+  - 180
+  - 225
+  - 270
+  - 315
+  bulletSpeed: 5
+  spawnRate: 0.5
