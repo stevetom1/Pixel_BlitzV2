@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SpiralAttack : MonoBehaviour
 {
@@ -8,9 +10,14 @@ public class SpiralAttack : MonoBehaviour
     public int numBullets = 20;
     public float bulletSpread = 45f;
     public float fireRate = 1f;
-    public GameObject player;
+    private Transform player;
 
     private float timer;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("player").transform;
+    }
 
     void Update()
     {

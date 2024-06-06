@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5471735968522425511}
   - component: {fileID: 5471735968522425510}
   - component: {fileID: 5471735968522425497}
+  - component: {fileID: -652119594061273120}
+  - component: {fileID: -2926043954841691685}
   m_Layer: 0
   m_Name: EarthSlime
   m_TagString: Enemy
@@ -169,3 +171,37 @@ MonoBehaviour:
   maxX2: 11
   maxY1: -9
   maxY2: 8
+--- !u!114 &-652119594061273120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5471735968522425498}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187d44c0d758e93458517d6c6cae74ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 599375419998053332, guid: 282af91eb0245db45b1097d4ece2b116, type: 3}
+  numBullets: 20
+  bulletSpread: 45
+  fireRate: 1
+--- !u!114 &-2926043954841691685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5471735968522425498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c080bcb481927744ab27716c3caf7745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0
+  lineOfSite: 13
+  bulletPrefab: {fileID: 599375419998053332, guid: 282af91eb0245db45b1097d4ece2b116, type: 3}
+  numBullets: 10
+  bulletSpread: 45
+  fireRate: 4
