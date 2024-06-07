@@ -28,6 +28,7 @@ public class enemyStats : MonoBehaviour
 
         if (enemyHp <= 0)
         {
+            //if(gameObject.tag = "")
             OnDeath?.Invoke();
             Destroy(gameObject);
         }

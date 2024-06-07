@@ -1981,7 +1981,7 @@ GameObject:
   - component: {fileID: 563473840}
   m_Layer: 6
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3992,7 +3992,7 @@ GameObject:
   - component: {fileID: 1184061887}
   m_Layer: 6
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4261,7 +4261,7 @@ GameObject:
   - component: {fileID: 1245354507}
   m_Layer: 6
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4924,13 +4924,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberToSpawn: 14
   spawnPool:
-  - {fileID: 6414113231419470760, guid: 0f4a6f7c946154a4e94105b858bf120a, type: 3}
-  - {fileID: 2992419237104181067, guid: 877730bdebc472148bd649ce0c5c231c, type: 3}
-  - {fileID: 2992419237104181067, guid: 877730bdebc472148bd649ce0c5c231c, type: 3}
-  - {fileID: 3202963593077947530, guid: e3e29791b5dc3784bbdd9c0ea4f24892, type: 3}
   - {fileID: 5193339815321315100, guid: ea2a17a0edd69ad459e627dff375c8b6, type: 3}
   - {fileID: 7804697593983579442, guid: 039ce52f6a4806c4195a94d8ecc89bea, type: 3}
   - {fileID: 2411726112236534186, guid: 3c80bf071ce5a2b4cb3f3e0c63754d6c, type: 3}
+  - {fileID: 3202963593077947530, guid: e3e29791b5dc3784bbdd9c0ea4f24892, type: 3}
   quad: {fileID: 1409181486}
 --- !u!64 &1409181488
 MeshCollider:
@@ -6028,7 +6025,7 @@ GameObject:
   - component: {fileID: 1685030586}
   m_Layer: 6
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6240,13 +6237,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - enemyPrefab: {fileID: 954391702978386020, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
+  - enemyPrefab: {fileID: 357022917058672069, guid: 0da9ef78f80eb144985563c72aab7ca6, type: 3}
     cost: 1
-  - enemyPrefab: {fileID: 954391702978386020, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
+  - enemyPrefab: {fileID: 3093559265730614729, guid: 009179df7cdd0144eb6bcaf93e785d25, type: 3}
     cost: 2
-  - enemyPrefab: {fileID: 954391702978386020, guid: ab324f4cd5ae2224aaae5efe7ac73d61, type: 3}
+  - enemyPrefab: {fileID: 5471735968522425498, guid: 716f416f3b7a24848ab2c69057ef0389, type: 3}
     cost: 3
   enemiesToSpawn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

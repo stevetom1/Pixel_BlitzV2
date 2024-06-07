@@ -9,6 +9,7 @@ TagManager:
   - enemyBullet
   - player
   - playerBullet
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - borders
   - player
   - player_bullet
-  - 
+  - enemy_bulet
   - background
   - 
   - 

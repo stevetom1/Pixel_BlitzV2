@@ -38,7 +38,7 @@ public class BluSlimeAttack : MonoBehaviour
                 foreach (float angle in angles)
                 {
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-
+                    
                     Vector3 direction = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0);
 
                     bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
