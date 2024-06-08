@@ -23,7 +23,6 @@ public class PlayerLives : MonoBehaviour
 
     void Update()
     {
-        // Handle the invincibility timer
         if (isInvincible)
         {
             invincibilityTimer -= Time.deltaTime;
@@ -58,14 +57,11 @@ public class PlayerLives : MonoBehaviour
 
         if (IsDead())
         {
-            // Handle player death (show death screen, etc.)
             deathScreen.SetActive(true);
             player.SetActive(false);
-            // You can also add additional logic here
         }
         else
         {
-            // Activate invincibility and start the timer
             isInvincible = true;
             invincibilityTimer = invincibilityDuration;
         }
@@ -83,7 +79,6 @@ public class PlayerLives : MonoBehaviour
 
     public void UpdateHud()
     {
-        // Update the heart icons based on current hp
         for (int i = 0; i < hearts.Length; i++)
         {
             hearts[i].SetActive(i < hp);
