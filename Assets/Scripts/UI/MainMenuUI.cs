@@ -11,11 +11,28 @@ public class MainMenuUI : MonoBehaviour
     {
         
     }
+    public void PlayButton()
+    {
+        SceneManager.LoadScene("Level_1");
+    }
 
     public void Level1()
     {
         SceneManager.LoadScene("Level_1");
     }
+    public void Level2()
+    {
+        SceneManager.LoadScene("Level_2");
+    }
+    public void Level3()
+    {
+        SceneManager.LoadScene("Level_3");
+    }
+    public void LevelEndless()
+    {
+        SceneManager.LoadScene("Level_Endless");
+    }
+
 
     public void QuitGame()
     {

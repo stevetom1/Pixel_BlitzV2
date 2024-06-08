@@ -23,7 +23,7 @@ public class PlayerLives : MonoBehaviour
 
     void Update()
     {
-        hpText.text = "HP: " + hp + "/" + maxHp;
+        //hpText.text = "HP: " + hp + "/" + maxHp;
         //xpText.text = "XP: " + exp;
         //levelText.text = "Level: " + level;
     }
