@@ -90,6 +90,8 @@ public class EnemySpawner : MonoBehaviour
 
     private List<GameObject> activeEnemies = new List<GameObject>();
 
+    public GameObject victoryScreen;
+
     private void Start()
     {
         GenerateWave();
@@ -162,7 +164,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void EndGame()
     {
-        Debug.Log("Game Over! All enemies are defeated.");
+        victoryScreen.SetActive(true);
     }
 }
 
