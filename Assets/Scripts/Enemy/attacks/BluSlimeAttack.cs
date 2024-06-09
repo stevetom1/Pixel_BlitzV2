@@ -26,7 +26,6 @@ public class BluSlimeAttack : MonoBehaviour
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         distance = Vector2.Distance(transform.position, player.transform.position);
 
-
         if (distanceFromPlayer < lineOfSite)
         {
             timer += Time.deltaTime;

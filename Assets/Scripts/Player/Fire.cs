@@ -17,7 +17,7 @@ public class Fire : MonoBehaviour
     public float timer;
     private Vector3 target;
 
-        void Start()
+    void Start()
     {
         cooldown = 0.5f;
         bulletSpeed = 10;

@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     private Collider2D playerCollider;
 
+    public GameObject pauseScreen;
+
+
     void Awake()
     {
         if (instance == null)
@@ -32,19 +35,21 @@ public class GameManager : MonoBehaviour
     {
         playerCollider = player.GetComponent<Collider2D>();
         UpdateUI();
+        DontDestroyOnLoad(pauseScreen);
     }
 
     void Update()
     {
-            
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu();
+        }
     }
 
     public void PlayerTakeDamage(int damage)
     {
         playerLives.TakeDamage(damage);
         playerLives.UpdateHud();
-        //UpdateUI();
         if (playerLives.IsDead())
         {
             GameOver();
@@ -70,4 +75,16 @@ public class GameManager : MonoBehaviour
         player.SetActive(false);
         Time.timeScale = 0f;
     }
+
+    private void PauseMenu()
+    {
+        pauseScreen.SetActive(true);
+        Time.timeScale = 0f;     
+    }
+    public void Unpause()
+    {
+        pauseScreen.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
 }

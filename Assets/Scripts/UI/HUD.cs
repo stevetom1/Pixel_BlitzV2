@@ -17,6 +17,7 @@ public class HUD : MonoBehaviour
     bool isCooldown2 = false;
     public KeyCode ability2;
 
+
     void Start()
     {
         abilityImage1.fillAmount = 0;

@@ -9,6 +9,8 @@ public class enemyStats : MonoBehaviour
     public int enemyHp;
     public int damage;
     public event Action OnDeath;
+    public GameObject fireSlime;
+    public GameObject lavaPool;
 
     void Start()
     {
@@ -27,8 +29,11 @@ public class enemyStats : MonoBehaviour
 
         if (enemyHp <= 0)
         {
-            //if(gameObject.tag = "")
             OnDeath?.Invoke();
+            if(gameObject == fireSlime) 
+            {
+                GameObject lavaPoolSpawn = Instantiate(lavaPool, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }
