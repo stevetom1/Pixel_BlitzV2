@@ -13,6 +13,7 @@ public class PlayerLives : MonoBehaviour
     public GameObject[] hearts;
     public TextMeshProUGUI hpText;
     public GameObject deathScreen;
+    public GameObject pauseScreen;
     public GameObject player;
 
     void Start()
@@ -32,10 +33,10 @@ public class PlayerLives : MonoBehaviour
             }
         }
 
-        // Update HUD text if needed
-        // hpText.text = "HP: " + hp + "/" + maxHp;
-        // xpText.text = "XP: " + exp;
-        // levelText.text = "Level: " + level;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,6 +60,7 @@ public class PlayerLives : MonoBehaviour
         {
             deathScreen.SetActive(true);
             player.SetActive(false);
+            Time.timeScale = 0f;
         }
         else
         {
@@ -95,5 +97,17 @@ public class PlayerLives : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void PauseMenu()
+    {
+        pauseScreen.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Unpause()
+    {
+        pauseScreen.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

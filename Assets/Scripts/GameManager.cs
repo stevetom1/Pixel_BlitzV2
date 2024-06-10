@@ -13,12 +13,16 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI hpText;
     public TextMeshProUGUI xpText;
     public TextMeshProUGUI levelText;
-    public GameObject deathScreen;
     public GameObject player;
 
     private Collider2D playerCollider;
 
     public GameObject pauseScreen;
+    public GameObject deathScreen;
+    public GameObject dashIcon;
+    public GameObject teleportIcon;
+    public GameObject scoreText;
+
 
 
     void Awake()
@@ -74,16 +78,25 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         deathScreen.SetActive(true);
         player.SetActive(false);
+        teleportIcon.SetActive(false);
+        dashIcon.SetActive(false);
+        scoreText.SetActive(false);
     }
 
     private void PauseMenu()
     {
         pauseScreen.SetActive(true);
+        teleportIcon.SetActive(false);
+        dashIcon.SetActive(false);
+        scoreText.SetActive(false);
         Time.timeScale = 0f;     
     }
     public void Unpause()
     {
         pauseScreen.SetActive(false);
+        teleportIcon.SetActive(true);
+        dashIcon.SetActive(true);
+        scoreText.SetActive(true);
         Time.timeScale = 1f;
     }
 
