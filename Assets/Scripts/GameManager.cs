@@ -71,9 +71,9 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
+        Time.timeScale = 0f;
         deathScreen.SetActive(true);
         player.SetActive(false);
-        Time.timeScale = 0f;
     }
 
     private void PauseMenu()

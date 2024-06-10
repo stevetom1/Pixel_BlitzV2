@@ -151,6 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 100
   damage: 20
+  bluSlime: {fileID: 357022917058672069}
+  fireSlime: {fileID: 0}
+  earthSlime: {fileID: 0}
+  lavaPool: {fileID: 0}
 --- !u!114 &357022917058672070
 MonoBehaviour:
   m_ObjectHideFlags: 0
