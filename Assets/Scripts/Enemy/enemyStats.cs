@@ -11,7 +11,10 @@ public class enemyStats : MonoBehaviour
     public event Action OnDeath;
     public GameObject bluSlime;
     public GameObject fireSlime;
+    public GameObject lavaSlime;
     public GameObject earthSlime;
+    public GameObject electroSlime;
+
     public GameObject lavaPool;
 
     private EnemySpawner enemySpawner;
@@ -47,6 +50,14 @@ public class enemyStats : MonoBehaviour
             if (gameObject == earthSlime)
             {
                 enemySpawner.OnEnemyDestroyed(300);
+            }
+            if (gameObject == electroSlime)
+            {
+                enemySpawner.OnEnemyDestroyed(350);
+            }
+            if (gameObject == lavaSlime)
+            {
+                enemySpawner.OnEnemyDestroyed(500);
             }
         }
     }

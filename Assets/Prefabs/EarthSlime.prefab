@@ -171,10 +171,10 @@ MonoBehaviour:
   distance: 0
   lineOfSite: 13
   range: 0
-  maxX1: -18
-  maxX2: 11
-  maxY1: -9
-  maxY2: 8
+  maxX1: -16
+  maxX2: 10
+  maxY1: -8
+  maxY2: 7
 --- !u!114 &-652119594061273120
 MonoBehaviour:
   m_ObjectHideFlags: 0

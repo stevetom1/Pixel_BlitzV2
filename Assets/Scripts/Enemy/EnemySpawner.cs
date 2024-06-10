@@ -96,6 +96,7 @@ public class EnemySpawner : MonoBehaviour
     private void EndGame()
     {
         victoryScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void OnEnemyDestroyed(int points)

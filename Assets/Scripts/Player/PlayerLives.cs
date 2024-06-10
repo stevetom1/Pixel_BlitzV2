@@ -92,6 +92,21 @@ public class PlayerLives : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Level_1");
     }
+    public void Retry_2()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Level_2");
+    }
+    public void Retr_3()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Level_3");
+    }
+    public void Retry_Endless()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Level_Endless");
+    }
 
     public void Menu()
     {
