@@ -9600,6 +9600,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1085876724}
+    - target: {fileID: 5676203022966006707, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
+      propertyPath: teleportCooldown
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6643236068914192708, guid: c8f9aa1ef36a39f4b954dd3608a873ba, type: 3}
       propertyPath: hpText
       value: 

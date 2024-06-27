@@ -44,10 +44,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseMenu();
-        }
+
     }
 
     public void PlayerTakeDamage(int damage)
