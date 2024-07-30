@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+        BeginTimer();
     }
 
     void Start()
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
+    
     }
 
     public void PlayerTakeDamage(int damage)
@@ -95,6 +96,11 @@ public class GameManager : MonoBehaviour
         dashIcon.SetActive(true);
         scoreText.SetActive(true);
         Time.timeScale = 1f;
+    }
+
+    public void BeginTimer()
+    {
+        Timer.instance.BeginTimer();
     }
 
 }
