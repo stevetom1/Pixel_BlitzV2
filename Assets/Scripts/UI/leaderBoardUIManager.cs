@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class LeaderboardUIManager : MonoBehaviour
+public class leaderboardUIManager : MonoBehaviour
 {
     public TextMeshProUGUI leaderboardContent;
 

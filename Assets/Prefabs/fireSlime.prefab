@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5716432591489542483}
   - component: {fileID: 5716432591489542484}
   - component: {fileID: 5716432591489542485}
+  - component: {fileID: 8968705729869788769}
   m_Layer: 0
   m_Name: fireSlime
   m_TagString: enemyBullet
@@ -198,3 +199,19 @@ MonoBehaviour:
   - 270
   bulletSpeed: 0.3
   spawnRate: 5
+--- !u!111 &8968705729869788769
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5716432591489542488}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

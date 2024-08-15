@@ -17,11 +17,10 @@ public class EnemySpawner : MonoBehaviour
     private float spawnInterval;
     private float spawnTimer;
 
-    [SerializeField]public TextMeshProUGUI scoreText;
+    [SerializeField] public TextMeshProUGUI scoreText;
+    public GameObject victoryScreen;
 
     private List<GameObject> activeEnemies = new List<GameObject>();
-
-    public GameObject victoryScreen;
 
     private void Start()
     {
@@ -97,6 +96,9 @@ public class EnemySpawner : MonoBehaviour
     {
         victoryScreen.SetActive(true);
         Time.timeScale = 0f;
+
+        SaveScore();
+        Debug.Log("Leaderboard saved to: " + Application.persistentDataPath);
     }
 
     public void OnEnemyDestroyed(int points)
@@ -104,6 +106,12 @@ public class EnemySpawner : MonoBehaviour
         totalPoints += points;
         scoreText.text = "Score: " + totalPoints;
         CheckEnemiesDefeated();
+    }
+
+    private void SaveScore()
+    {
+        string playerName = "PlayerName";
+        LeaderboardManager.instance.AddScore(playerName, totalPoints);
     }
 }
 
