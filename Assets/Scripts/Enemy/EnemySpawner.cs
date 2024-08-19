@@ -88,6 +88,7 @@ public class EnemySpawner : MonoBehaviour
         activeEnemies.RemoveAll(enemy => enemy == null);
         if (activeEnemies.Count == 0)
         {
+            //Debug.Log("time before end: " + Timer.instance.GetElapsedTime() + " seconds");
             EndGame();
         }
     }
@@ -95,10 +96,21 @@ public class EnemySpawner : MonoBehaviour
     private void EndGame()
     {
         victoryScreen.SetActive(true);
+
         Time.timeScale = 0f;
 
-        SaveScore();
-        Debug.Log("Leaderboard saved to: " + Application.persistentDataPath);
+        Timer.instance.EndTimer();
+        float finalTime = Timer.instance.GetElapsedTime();
+        //Debug.Log("Final Time to be saved: " + finalTime + " seconds");
+        SaveScore(finalTime);
+    }
+
+    private void SaveScore(float time)
+    {
+        string playerName = "PlayerName"; // Set dynamically as needed
+        //Debug.Log("Saving score for " + playerName + " with time: " + time + " seconds");
+        LeaderboardManager.instance.AddScore(playerName, time);
+        //Debug.Log("Score saved successfully.");
     }
 
     public void OnEnemyDestroyed(int points)
@@ -106,12 +118,6 @@ public class EnemySpawner : MonoBehaviour
         totalPoints += points;
         scoreText.text = "Score: " + totalPoints;
         CheckEnemiesDefeated();
-    }
-
-    private void SaveScore()
-    {
-        string playerName = "PlayerName";
-        LeaderboardManager.instance.AddScore(playerName, totalPoints);
     }
 }
 

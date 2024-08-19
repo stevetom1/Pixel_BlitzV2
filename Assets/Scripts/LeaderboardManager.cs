@@ -1,65 +1,64 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
-
-[Serializable]
-public class PlayerScore
-{
-    public string playerName;
-    public float time;
-
-    public PlayerScore(string playerName, float time)
-    {
-        this.playerName = playerName;
-        this.time = time;
-    }
-}
+using System.IO;
 
 public class LeaderboardManager : MonoBehaviour
 {
     public static LeaderboardManager instance;
-    private List<PlayerScore> leaderboard = new List<PlayerScore>();
-    private string filePath;
+
+    public List<LeaderboardEntry> leaderboard = new List<LeaderboardEntry>();
 
     private void Awake()
     {
         instance = this;
-        filePath = Path.Combine(Application.persistentDataPath, "leaderboard.json");
         LoadLeaderboard();
     }
 
     public void AddScore(string playerName, float time)
     {
-        leaderboard.Add(new PlayerScore(playerName, time));
-        leaderboard.Sort((x, y) => x.time.CompareTo(y.time));
+        LeaderboardEntry entry = new LeaderboardEntry(playerName, time);
+        leaderboard.Add(entry);
+        leaderboard.Sort((x, y) => x.time.CompareTo(y.time)); // Sort by time (ascending)
         SaveLeaderboard();
     }
 
-    public List<PlayerScore> GetLeaderboard()
+    public List<LeaderboardEntry> GetLeaderboard()
     {
         return leaderboard;
     }
 
     private void SaveLeaderboard()
     {
-        string json = JsonUtility.ToJson(new LeaderboardWrapper { leaderboard = this.leaderboard }, true);
-        File.WriteAllText(filePath, json);
+        string json = JsonUtility.ToJson(new LeaderboardWrapper { entries = leaderboard });
+        File.WriteAllText(Application.persistentDataPath + "/leaderboard.json", json);
     }
 
     private void LoadLeaderboard()
     {
-        if (File.Exists(filePath))
+        string path = Application.persistentDataPath + "/leaderboard.json";
+        if (File.Exists(path))
         {
-            string json = File.ReadAllText(filePath);
-            LeaderboardWrapper loadedData = JsonUtility.FromJson<LeaderboardWrapper>(json);
-            leaderboard = loadedData.leaderboard;
+            string json = File.ReadAllText(path);
+            leaderboard = JsonUtility.FromJson<LeaderboardWrapper>(json).entries;
         }
     }
 }
 
-[Serializable]
+[System.Serializable]
+public class LeaderboardEntry
+{
+    public string playerName;
+    public float time;
+
+    public LeaderboardEntry(string playerName, float time)
+    {
+        this.playerName = playerName;
+        this.time = time;
+    }
+}
+
+[System.Serializable]
 public class LeaderboardWrapper
 {
-    public List<PlayerScore> leaderboard;
+    public List<LeaderboardEntry> entries;
 }

@@ -8,11 +8,10 @@ public class Timer : MonoBehaviour
     public static Timer instance;
 
     public TextMeshProUGUI timeCounter;
-    public string playerName = "Player"; // This should be set dynamically based on player input
+    public string playerName = "Player"; // Set dynamically as needed
 
     private TimeSpan timePlaying;
     private bool timerGoing;
-
     private float elapsedTime;
 
     private void Awake()
@@ -23,42 +22,56 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timeCounter.text = "Time: 00:00.0";
+        Debug.Log("Timer initialized");
+    }
+
+    private void Update()
+    {
+        Debug.Log("èas" + elapsedTime);
+
+        while (timerGoing)
+        {
+            elapsedTime += Time.deltaTime;
+            //Debug.Log("Updating elapsed time: " + elapsedTime + " seconds");
+
+            timePlaying = TimeSpan.FromSeconds(elapsedTime);
+            string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
+            timeCounter.text = timePlayingStr;
+        }
     }
 
     public void BeginTimer()
     {
         timerGoing = true;
         elapsedTime = 0f;
-
-        StartCoroutine(UpdateTimer());
+        Debug.Log("Timer started");
+        //StartCoroutine(UpdateTimer());
     }
 
     public void EndTimer()
     {
         timerGoing = false;
-        SaveTime();
+        Debug.Log("Timer stopped. Elapsed Time: " + elapsedTime + " seconds");
     }
 
-    private IEnumerator UpdateTimer()
+    public IEnumerator UpdateTimer()
     {
+        Debug.Log("UpdateTimer coroutine started");
         while (timerGoing)
         {
             elapsedTime += Time.deltaTime;
+            //Debug.Log("Updating elapsed time: " + elapsedTime + " seconds");
+
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;
-
             yield return null;
         }
     }
 
-    private void SaveTime()
+    public float GetElapsedTime()
     {
-        LeaderboardManager.instance.AddScore(playerName, elapsedTime);
-    }
-
-    void Update()
-    {
-
+        Debug.Log("Returning elapsed time: " + elapsedTime + " seconds");
+        return elapsedTime;
     }
 }

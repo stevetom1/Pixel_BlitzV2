@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7191ae2982d1b6a459e6ef8c86d1add5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ba5408310ba4e54abab6306bc42d70c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,7 +153,9 @@ MonoBehaviour:
   damage: 20
   bluSlime: {fileID: 357022917058672069}
   fireSlime: {fileID: 0}
+  lavaSlime: {fileID: 0}
   earthSlime: {fileID: 0}
+  electroSlime: {fileID: 0}
   lavaPool: {fileID: 0}
 --- !u!114 &357022917058672070
 MonoBehaviour:
