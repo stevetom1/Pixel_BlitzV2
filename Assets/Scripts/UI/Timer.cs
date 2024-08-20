@@ -8,11 +8,13 @@ public class Timer : MonoBehaviour
     public static Timer instance;
 
     public TextMeshProUGUI timeCounter;
-    public string playerName = "Player"; // Set dynamically as needed
+    public string playerName = "Player";
 
     private TimeSpan timePlaying;
     private bool timerGoing;
-    private float elapsedTime;
+
+    public float elapsedTime;
+    public float finalTime;
 
     private void Awake()
     {
@@ -22,57 +24,49 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timeCounter.text = "Time: 00:00.0";
-        Debug.Log("Timer initialized");
     }
 
-    private void Update()
+    void Update()
     {
-
-        if(timerGoing)
+        if (timerGoing)
         {
             elapsedTime += Time.deltaTime;
-            //Debug.Log("Updating elapsed time: " + elapsedTime + " seconds");
-
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;
         }
-        //Debug.Log("èas" + elapsedTime);
-
+        Debug.Log(elapsedTime);
     }
 
     public void BeginTimer()
     {
         timerGoing = true;
         elapsedTime = 0f;
-        Debug.Log("Timer started");
+
         //StartCoroutine(UpdateTimer());
     }
 
     public void EndTimer()
     {
         timerGoing = false;
-        Debug.Log("Timer stopped. Elapsed Time: " + elapsedTime + " seconds");
+        finalTime = elapsedTime;
     }
 
-    public IEnumerator UpdateTimer()
+    private IEnumerator UpdateTimer()
     {
-        Debug.Log("UpdateTimer coroutine started");
         while (timerGoing)
         {
             elapsedTime += Time.deltaTime;
-            //Debug.Log("Updating elapsed time: " + elapsedTime + " seconds");
-
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;
+
             yield return null;
         }
     }
 
     public float GetElapsedTime()
     {
-        Debug.Log("Returning elapsed time: " + elapsedTime + " seconds");
-        return elapsedTime;
-    }
+        return finalTime;
+    }    
 }

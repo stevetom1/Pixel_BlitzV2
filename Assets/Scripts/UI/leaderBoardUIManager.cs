@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class leaderboardUIManager : MonoBehaviour
+public class LeaderboardUIManager : MonoBehaviour
 {
     public TextMeshProUGUI leaderboardContent;
 
@@ -13,6 +13,12 @@ public class leaderboardUIManager : MonoBehaviour
 
     public void DisplayLeaderboard()
     {
+        if (leaderboardContent == null)
+        {
+            Debug.LogError("Leaderboard Content is not assigned in the Inspector.");
+            return;
+        }
+
         List<PlayerScore> leaderboard = LeaderboardManager.instance.GetLeaderboard();
         leaderboardContent.text = "";
 
@@ -21,4 +27,5 @@ public class leaderboardUIManager : MonoBehaviour
             leaderboardContent.text += $"{playerScore.playerName}: {playerScore.time:F2}s\n";
         }
     }
+
 }

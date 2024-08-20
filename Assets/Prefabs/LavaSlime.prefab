@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3093559265730614726}
   - component: {fileID: 3093559265730614725}
   - component: {fileID: 3093559265730614724}
+  - component: {fileID: 8913312206259561532}
   m_Layer: 0
   m_Name: LavaSlime
   m_TagString: Enemy
@@ -175,3 +176,23 @@ MonoBehaviour:
   maxX2: 10
   maxY1: -8
   maxY2: 7
+--- !u!95 &8913312206259561532
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093559265730614729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10097594d603a7e4fbef7c661f72a1dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

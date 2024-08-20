@@ -1518,6 +1518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeCounter: {fileID: 1058418357}
   playerName: Player
+  elapsedTime: 0
+  finalTime: 0
 --- !u!1 &407986969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,6 +2647,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeCounter: {fileID: 1058418357}
   playerName: Player
+  elapsedTime: 0
+  finalTime: 0
 --- !u!1 &644591637
 GameObject:
   m_ObjectHideFlags: 0

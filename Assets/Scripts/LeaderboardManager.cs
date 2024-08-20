@@ -34,6 +34,7 @@ public class LeaderboardManager : MonoBehaviour
         leaderboard.Add(new PlayerScore(playerName, time));
         leaderboard.Sort((x, y) => x.time.CompareTo(y.time));
         SaveLeaderboard();
+        Debug.Log("Leaderboard saved to: " + Application.persistentDataPath);
     }
 
     public List<PlayerScore> GetLeaderboard()

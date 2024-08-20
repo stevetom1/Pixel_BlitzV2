@@ -88,29 +88,33 @@ public class EnemySpawner : MonoBehaviour
         activeEnemies.RemoveAll(enemy => enemy == null);
         if (activeEnemies.Count == 0)
         {
-            //Debug.Log("time before end: " + Timer.instance.GetElapsedTime() + " seconds");
             EndGame();
         }
     }
 
     private void EndGame()
     {
-        victoryScreen.SetActive(true);
+        if (victoryScreen != null)
+        {
+            victoryScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Debug.LogError("Victory screen is not assigned in the Inspector.");
+        }
 
-        Time.timeScale = 0f;
+        SaveScore();
 
-        Timer.instance.EndTimer();
-        float finalTime = Timer.instance.GetElapsedTime();
-        //Debug.Log("Final Time to be saved: " + finalTime + " seconds");
-        SaveScore(finalTime);
-    }
-
-    private void SaveScore(float time)
-    {
-        string playerName = "PlayerName"; // Set dynamically as needed
-        //Debug.Log("Saving score for " + playerName + " with time: " + time + " seconds");
-        LeaderboardManager.instance.AddScore(playerName, time);
-        //Debug.Log("Score saved successfully.");
+        LeaderboardUIManager leaderboardUIManager = FindObjectOfType<LeaderboardUIManager>();
+        if (leaderboardUIManager != null)
+        {
+            leaderboardUIManager.DisplayLeaderboard();
+        }
+        else
+        {
+            Debug.LogError("LeaderboardUIManager instance is not found in the scene.");
+        }
     }
 
     public void OnEnemyDestroyed(int points)
@@ -119,6 +123,20 @@ public class EnemySpawner : MonoBehaviour
         scoreText.text = "Score: " + totalPoints;
         CheckEnemiesDefeated();
     }
+
+    private void SaveScore()
+    {
+        if (LeaderboardManager.instance != null)
+        {
+            string playerName = "PlayerName";
+            LeaderboardManager.instance.AddScore(playerName, /*Timer.instance.GetElapsedTime()*/ totalPoints);
+        }
+        else
+        {
+            Debug.LogError("LeaderboardManager instance is null. Make sure it's in the scene.");
+        }
+    }
+
 }
 
 [System.Serializable]
