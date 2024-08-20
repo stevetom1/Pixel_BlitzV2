@@ -13,12 +13,12 @@ public class leaderboardUIManager : MonoBehaviour
 
     public void DisplayLeaderboard()
     {
-        List<LeaderboardEntry> leaderboard = LeaderboardManager.instance.GetLeaderboard();
+        List<PlayerScore> leaderboard = LeaderboardManager.instance.GetLeaderboard();
         leaderboardContent.text = "";
 
-        foreach (LeaderboardEntry entry in leaderboard)
+        foreach (PlayerScore playerScore in leaderboard)
         {
-            leaderboardContent.text += $"{entry.playerName}: {entry.time:F2}s\n";
+            leaderboardContent.text += $"{playerScore.playerName}: {playerScore.time:F2}s\n";
         }
     }
 }

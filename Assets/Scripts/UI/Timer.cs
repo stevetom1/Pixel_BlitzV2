@@ -27,9 +27,8 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("èas" + elapsedTime);
 
-        while (timerGoing)
+        if(timerGoing)
         {
             elapsedTime += Time.deltaTime;
             //Debug.Log("Updating elapsed time: " + elapsedTime + " seconds");
@@ -38,6 +37,8 @@ public class Timer : MonoBehaviour
             string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;
         }
+        //Debug.Log("èas" + elapsedTime);
+
     }
 
     public void BeginTimer()
