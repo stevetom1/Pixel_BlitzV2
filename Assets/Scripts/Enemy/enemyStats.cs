@@ -18,10 +18,17 @@ public class enemyStats : MonoBehaviour
     public GameObject lavaPool;
 
     private EnemySpawner enemySpawner;
+    private ExpirienceManager expirienceManager;
 
     void Start()
     {
         enemySpawner = FindObjectOfType<EnemySpawner>();
+        expirienceManager = FindObjectOfType<ExpirienceManager>();
+
+        if (expirienceManager == null)
+        {
+            Debug.LogError("ExpirienceManager not found!");
+        }
     }
 
     void Update()
@@ -41,23 +48,28 @@ public class enemyStats : MonoBehaviour
             {
                 GameObject lavaPoolSpawn = Instantiate(lavaPool, transform.position, Quaternion.identity);
                 enemySpawner.OnEnemyDestroyed(200);
+                //expirienceManager.AddExperience(10);
             }
             Destroy(gameObject);
             if (gameObject == bluSlime)
             {
                 enemySpawner.OnEnemyDestroyed(100);
+                expirienceManager.AddExperience(5);
             }
             if (gameObject == earthSlime)
             {
                 enemySpawner.OnEnemyDestroyed(300);
+                expirienceManager.AddExperience(15);
             }
             if (gameObject == electroSlime)
             {
                 enemySpawner.OnEnemyDestroyed(350);
+                expirienceManager.AddExperience(20);
             }
             if (gameObject == lavaSlime)
             {
                 enemySpawner.OnEnemyDestroyed(500);
+                expirienceManager.AddExperience(25);
             }
         }
     }

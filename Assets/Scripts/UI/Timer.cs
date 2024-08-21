@@ -13,8 +13,10 @@ public class Timer : MonoBehaviour
     private TimeSpan timePlaying;
     private bool timerGoing;
 
-    public float elapsedTime;
+    public static float elapsedTime;
     public float finalTime;
+
+    private EnemySpawner enemySpawner;
 
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
+        enemySpawner = FindObjectOfType<EnemySpawner>();
         timeCounter.text = "Time: 00:00.0";
     }
 
@@ -34,8 +37,10 @@ public class Timer : MonoBehaviour
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;
+            finalTime = elapsedTime;
+            //Debug.Log(finalTime);
         }
-        Debug.Log(elapsedTime);
+        //Debug.Log(elapsedTime + "from update");
     }
 
     public void BeginTimer()
@@ -49,7 +54,7 @@ public class Timer : MonoBehaviour
     public void EndTimer()
     {
         timerGoing = false;
-        finalTime = elapsedTime;
+        //finalTime = elapsedTime;
     }
 
     private IEnumerator UpdateTimer()
@@ -67,6 +72,7 @@ public class Timer : MonoBehaviour
 
     public float GetElapsedTime()
     {
+        Debug.Log(finalTime);
         return finalTime;
     }    
 }

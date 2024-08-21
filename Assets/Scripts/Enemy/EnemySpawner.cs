@@ -22,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
 
     private List<GameObject> activeEnemies = new List<GameObject>();
 
+
     private void Start()
     {
         GenerateWave();
@@ -49,6 +50,8 @@ public class EnemySpawner : MonoBehaviour
             spawnTimer -= Time.fixedDeltaTime;
             waveTimer -= Time.fixedDeltaTime;
         }
+
+        Debug.Log(Timer.instance.GetElapsedTime());
     }
 
     public void GenerateWave()
@@ -121,6 +124,7 @@ public class EnemySpawner : MonoBehaviour
     {
         totalPoints += points;
         scoreText.text = "Score: " + totalPoints;
+
         CheckEnemiesDefeated();
     }
 
@@ -129,7 +133,7 @@ public class EnemySpawner : MonoBehaviour
         if (LeaderboardManager.instance != null)
         {
             string playerName = "PlayerName";
-            LeaderboardManager.instance.AddScore(playerName, /*Timer.instance.GetElapsedTime()*/ totalPoints);
+            LeaderboardManager.instance.AddScore(playerName, Timer.instance.GetElapsedTime() /*totalPoints*/);
         }
         else
         {
