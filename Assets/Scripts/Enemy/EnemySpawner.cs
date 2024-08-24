@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
             waveTimer -= Time.fixedDeltaTime;
         }
 
-        Debug.Log(Timer.instance.GetElapsedTime());
+        //Debug.Log(Timer.instance.GetElapsedTime());
     }
 
     public void GenerateWave()
