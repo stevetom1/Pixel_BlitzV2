@@ -11,7 +11,7 @@ public class PlayerScore
 
     public PlayerScore(string playerName, float time)
     {
-        this.playerName = playerName;
+        this.playerName = PlayerPrefs.GetString("name");
         this.time = time;
     }
 }

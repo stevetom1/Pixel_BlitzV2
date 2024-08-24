@@ -153,7 +153,7 @@ MonoBehaviour:
   enemyHp: 100
   damage: 15
   bluSlime: {fileID: 0}
-  fireSlime: {fileID: 3093559265730614729, guid: 009179df7cdd0144eb6bcaf93e785d25, type: 3}
+  fireSlime: {fileID: 0}
   lavaSlime: {fileID: 0}
   earthSlime: {fileID: 5471735968522425498}
   electroSlime: {fileID: 0}

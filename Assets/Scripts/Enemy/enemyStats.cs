@@ -48,7 +48,7 @@ public class enemyStats : MonoBehaviour
             {
                 GameObject lavaPoolSpawn = Instantiate(lavaPool, transform.position, Quaternion.identity);
                 enemySpawner.OnEnemyDestroyed(200);
-                //expirienceManager.AddExperience(10);
+                expirienceManager.AddExperience(10);
             }
             Destroy(gameObject);
             if (gameObject == bluSlime)

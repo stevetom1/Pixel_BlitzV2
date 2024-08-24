@@ -15,10 +15,13 @@ public class ExpirienceManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI experienceText;
     [SerializeField] Image experienceFill;
 
+    private DontDestroy dontDestroy;
+
     void Start()
     {
         UpdateLevel();
         //Debug.Log("started");
+        dontDestroy = FindObjectOfType<DontDestroy>();
     }
 
     void Update()
@@ -28,7 +31,6 @@ public class ExpirienceManager : MonoBehaviour
         {
             AddExperience(5);
         }*/
-
     }
 
     public void AddExperience(int amount)
