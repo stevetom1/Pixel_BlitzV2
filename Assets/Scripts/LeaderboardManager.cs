@@ -8,11 +8,13 @@ public class PlayerScore
 {
     public string playerName;
     public float time;
+    public int score;
 
-    public PlayerScore(string playerName, float time)
+    public PlayerScore(string playerName, float time, int score)
     {
         this.playerName = PlayerPrefs.GetString("name");
         this.time = time;
+        this.score = score;
     }
 }
 
@@ -29,9 +31,9 @@ public class LeaderboardManager : MonoBehaviour
         LoadLeaderboard();
     }
 
-    public void AddScore(string playerName, float time)
+    public void AddScore(string playerName, float time, int score)
     {
-        leaderboard.Add(new PlayerScore(playerName, time));
+        leaderboard.Add(new PlayerScore(playerName, time, score));
         leaderboard.Sort((x, y) => x.time.CompareTo(y.time));
         SaveLeaderboard();
         Debug.Log("Leaderboard saved to: " + Application.persistentDataPath);
@@ -58,6 +60,7 @@ public class LeaderboardManager : MonoBehaviour
         }
     }
 }
+
 
 [Serializable]
 public class LeaderboardWrapper

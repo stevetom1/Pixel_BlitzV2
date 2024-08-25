@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class LeaderboardUIManager : MonoBehaviour
 {
@@ -24,8 +24,7 @@ public class LeaderboardUIManager : MonoBehaviour
 
         foreach (PlayerScore playerScore in leaderboard)
         {
-            leaderboardContent.text += $"{playerScore.playerName}: {playerScore.time:F2}s\n";
+            leaderboardContent.text += $"{playerScore.playerName}: {playerScore.time:F2}s, {playerScore.score}\n";
         }
     }
-
 }

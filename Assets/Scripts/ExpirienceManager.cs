@@ -15,22 +15,20 @@ public class ExpirienceManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI experienceText;
     [SerializeField] Image experienceFill;
 
-    private DontDestroy dontDestroy;
+    private Data data;
 
     void Start()
     {
+        data = FindObjectOfType<Data>();
+        totalExperience = data.totalExperience;
+        currentLevel= data.currentLevel;
+        //CheckForLevelUp();
         UpdateLevel();
-        //Debug.Log("started");
-        dontDestroy = FindObjectOfType<DontDestroy>();
     }
 
     void Update()
     {
-        //Debug.Log(totalExperience);
-        /*if(Input.GetMouseButtonDown(0))
-        {
-            AddExperience(5);
-        }*/
+        UpdateInterface();
     }
 
     public void AddExperience(int amount)
@@ -38,6 +36,7 @@ public class ExpirienceManager : MonoBehaviour
         totalExperience += amount;
         CheckForLevelUp();
         Debug.Log(totalExperience);
+        data.totalExperience = totalExperience;
     }
 
     private void CheckForLevelUp()
@@ -46,6 +45,7 @@ public class ExpirienceManager : MonoBehaviour
         {
             currentLevel++;
             UpdateLevel();
+            data.currentLevel= currentLevel;
 
             //here level up mechanics
         }
