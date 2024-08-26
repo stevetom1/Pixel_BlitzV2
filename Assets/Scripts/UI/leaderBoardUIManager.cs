@@ -24,7 +24,13 @@ public class LeaderboardUIManager : MonoBehaviour
 
         foreach (PlayerScore playerScore in leaderboard)
         {
-            leaderboardContent.text += $"{playerScore.playerName}: {playerScore.time:F2}s, {playerScore.score}\n";
+            string cutName = playerScore.playerName;
+            if(playerScore.playerName.Length > 10) 
+            {
+                cutName = playerScore.playerName.Substring(0, 10);
+            }
+            cutName = cutName.PadRight(12);
+            leaderboardContent.text += $"{cutName} {playerScore.time:F2}s {playerScore.score.ToString().PadLeft(6)}\n";
         }
     }
 }

@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
 
     public void BeginTimer()
     {
+        //Timer timer = FindObjectOfType<Timer>();
         Timer.instance.BeginTimer();
     }
 

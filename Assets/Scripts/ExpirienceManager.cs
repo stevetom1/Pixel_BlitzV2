@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using System.Diagnostics.Tracing;
 
 public class ExpirienceManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ExpirienceManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI experienceText;
+    [SerializeField] GameObject levelUpText;
     [SerializeField] Image experienceFill;
 
     private Data data;
@@ -22,7 +24,6 @@ public class ExpirienceManager : MonoBehaviour
         data = FindObjectOfType<Data>();
         totalExperience = data.totalExperience;
         currentLevel= data.currentLevel;
-        //CheckForLevelUp();
         UpdateLevel();
     }
 
@@ -35,7 +36,6 @@ public class ExpirienceManager : MonoBehaviour
     {
         totalExperience += amount;
         CheckForLevelUp();
-        Debug.Log(totalExperience);
         data.totalExperience = totalExperience;
     }
 
@@ -46,8 +46,7 @@ public class ExpirienceManager : MonoBehaviour
             currentLevel++;
             UpdateLevel();
             data.currentLevel= currentLevel;
-
-            //here level up mechanics
+            StartCoroutine(LevelUpShowTime());
         }
     }
 
@@ -67,4 +66,11 @@ public class ExpirienceManager : MonoBehaviour
         experienceText.text = start + "exp / " + end + " exp";
         experienceFill.fillAmount = (float)start / (float)end;
     }
+    IEnumerator LevelUpShowTime()
+    {
+        levelUpText.SetActive(true);
+        yield return new WaitForSeconds(2);
+        levelUpText.SetActive(false);
+    }
+
 }

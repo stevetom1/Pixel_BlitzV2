@@ -38,17 +38,13 @@ public class Timer : MonoBehaviour
             string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;
             finalTime = elapsedTime;
-            //Debug.Log(finalTime);
         }
-        //Debug.Log(elapsedTime + "from update");
     }
 
     public void BeginTimer()
     {
         timerGoing = true;
         elapsedTime = 0f;
-
-        //StartCoroutine(UpdateTimer());
     }
 
     public void EndTimer()
@@ -56,20 +52,6 @@ public class Timer : MonoBehaviour
         timerGoing = false;
         //finalTime = elapsedTime;
     }
-
-    private IEnumerator UpdateTimer()
-    {
-        while (timerGoing)
-        {
-            elapsedTime += Time.deltaTime;
-            timePlaying = TimeSpan.FromSeconds(elapsedTime);
-            string timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
-            timeCounter.text = timePlayingStr;
-
-            yield return null;
-        }
-    }
-
     public float GetElapsedTime()
     {
         Debug.Log(finalTime);

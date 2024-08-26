@@ -19,11 +19,13 @@ public class enemyStats : MonoBehaviour
 
     private EnemySpawner enemySpawner;
     private ExpirienceManager expirienceManager;
+    private Data data;
 
     void Start()
     {
         enemySpawner = FindObjectOfType<EnemySpawner>();
         expirienceManager = FindObjectOfType<ExpirienceManager>();
+        data = FindObjectOfType<Data>();
 
         if (expirienceManager == null)
         {
@@ -39,7 +41,8 @@ public class enemyStats : MonoBehaviour
 
     public void TakeDamage()
     {
-        enemyHp -= damage;
+        enemyHp -= (damage + data.currentLevel);
+        Debug.Log("hp slime: " + enemyHp);
 
         if (enemyHp <= 0)
         {

@@ -131,6 +131,7 @@ public class EnemySpawner : MonoBehaviour
     private void SaveScore()
     {
         Timer timer = FindObjectOfType<Timer>();
+        Debug.Log("time: " + timer.GetElapsedTime());
         LeaderboardManager leaderboardManager = FindObjectOfType<LeaderboardManager>();
         if (LeaderboardManager.instance != null)
         {
